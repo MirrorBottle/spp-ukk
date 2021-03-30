@@ -1,0 +1,23 @@
+/* Navbar */
+
+.navbar-nav .nav-item {
+    margin: 8px 10px 0px 10px;
+    border-radius: 7px;
+}
+.navbar-nav .nav-item.active {
+    background: #5E72E4;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 40%);
+}
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item.active .nav-link i {
+    color: #fff!important;
+}
+
+.nav-pills .nav-link {
+  box-shadow: none!important;
+}
+
+.img-custom {
+    background-size: cover!important;
+    object-fit: cover!important;
+}
