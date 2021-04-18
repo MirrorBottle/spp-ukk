@@ -20,7 +20,7 @@ class RoleTableSeeder extends Seeder
         // Create Roles
         $admin = Role::create(['name' => 'admin']);
         $staff = Role::create(['name' => 'staff']);
-
+        $student = Role::create(['name' => 'student']);
         Schema::enableForeignKeyConstraints();
     }
 }

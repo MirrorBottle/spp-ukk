@@ -7,9 +7,9 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Argon Dashboard') }}</title>
+        <title>SPP</title>
         <!-- Favicon -->
-        <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
+        <link href="{{ asset('images/favicon.png') }}" rel="icon" type="image/png">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <!-- Extra details for Live View on GitHub Pages -->
@@ -25,6 +25,8 @@
         <link rel="stylesheet" href="{{asset('argon')}}/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css">
         {{-- Sweetalert2 --}}
         <link rel="stylesheet" href="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.min.css">
+        {{-- Select2 --}}
+        <link rel="stylesheet" href="{{ asset('argon') }}/vendor/select2/dist/css/select2.min.css">
         {{-- Custom Script --}}
         <link rel="stylesheet" href="{{asset('argon')}}/css/custom.css">
     </head>
@@ -61,6 +63,8 @@
         <script src="{{asset('argon')}}/vendor/bs-custom-file-input.min.js"></script>
         {{-- Sweetalert2 --}}
         <script src="{{ asset('argon') }}/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        {{-- Select2 --}}
+        <script src="{{ asset('argon') }}/vendor/select2/dist/js/select2.min.js"></script>
         {{-- Custom Script --}}
         <script src="{{ asset('argon') }}/js/custom.js"></script>
         @stack('js')

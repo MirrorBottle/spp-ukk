@@ -1,6 +1,20 @@
 $(function () {
+    // Select2
+    $('.select2').select2();
+    // Datatable
     $('.table').DataTable({
         "language": {
+            "emptyTable":     "Data kosong",
+            "info":           "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+            "infoEmpty":      "Menampilkan 0 sampai 0 dari 0 data",
+            "infoFiltered":   "",
+            "infoPostFix":    "",
+            "thousands":      ",",
+            "lengthMenu":     "Tampilkan _MENU_ data",
+            "loadingRecords": "Loading...",
+            "processing":     "Memproses...",
+            "search":         "Cari:",
+            "zeroRecords":    "Tidak ada data yang ditemukan.",
             "oPaginate": {
                 "sFirst": "<i class='fas fa-chevron-double-left'></i>",
                 "sPrevious": "<i class='fas fa-chevron-left'></i>",
@@ -9,6 +23,7 @@ $(function () {
             }
         }
     });
+    // Datepicker
     $('.datepicker').datepicker();
     bsCustomFileInput.init();
 
@@ -70,5 +85,7 @@ $(function () {
             document.getElementById("foto-preview").src = oFREvent.target.result;
         };
     };
+
+
 })
 

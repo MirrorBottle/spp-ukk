@@ -67,16 +67,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="avatar" class="font-weight-bold">Foto Profile</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="avatar" id="avatar">
-                                <label class="custom-file-label" for="avatar">Pilih foto...</label>
-                            </div>
-                            @error('avatar')
-                            <div class="invalid-feedback d-block">{{$message}}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label for="password_confirm" class="font-weight-bold">Password</label>
                             <input type="password" value="{{ old('password') }}" class="form-control " name="password" id="password">
                             @error('password')
@@ -92,9 +82,9 @@
                         </div>
                     </div>
                     <div class="card-footer py-4 text-right">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success">
                             <i class="fas fa-save mr-2"></i>
-                            Submit
+                            Simpan
                         </button>
                     </div>
                 </form>

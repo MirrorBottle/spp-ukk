@@ -66,28 +66,11 @@
                             <div class="invalid-feedback d-block">{{$message}}</div>
                             @enderror
                         </div>
-                        <div class="row">
-                          <div class="col-md-3 col-12">
-                            <img src="{{asset('storage/files/' . $user->avatar)}}" style="width:15rem;height:15rem" alt="Profile image" class="img-fluid img-thumbnail rounded img-custom">
-                          </div>
-                          <div class="col-md-9 col-12">
-                            <div class="form-group">
-                              <label for="avatar" class="font-weight-bold">Foto Profile</label>
-                              <div class="custom-file">
-                                  <input type="file" class="custom-file-input" name="avatar" id="avatar">
-                                  <label class="custom-file-label" for="avatar">Pilih foto...</label>
-                              </div>
-                              @error('avatar')
-                              <div class="invalid-feedback d-block">{{$message}}</div>
-                              @enderror
-                          </div>
-                          </div>
-                        </div>
                     </div>
                     <div class="card-footer py-4 text-right">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success">
                             <i class="fas fa-save mr-2"></i>
-                            Submit
+                            Simpan
                         </button>
                     </div>
                 </form>

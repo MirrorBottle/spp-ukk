@@ -6,38 +6,12 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+            <img src="{{ asset('images/logo.png') }}" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="media align-items-center">
-                        <span class="avatar avatar-sm rounded-circle">
-                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
-                        </span>
-                    </div>
-                </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
-                    </div>
-                    <a href="{{ route('profile.edit') }}" class="dropdown-item">
-                        <i class="ni ni-single-02"></i>
-                        <span>{{ __('My profile') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>{{ __('Settings') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-calendar-grid-58"></i>
-                        <span>{{ __('Activity') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>{{ __('Support') }}</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -54,7 +28,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('argon') }}/img/brand/blue.png">
+                            <img src="{{ asset('images/logo.png') }}">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -69,17 +43,37 @@
             <ul class="navbar-nav">
                 <li class="nav-item {{Request::is('dashboard') ? 'active' : ''}}">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
+                        <i class="ni ni-tv-2 text-success"></i> {{ __('Dashboard') }}
+                    </a>
+                </li>
+                <li class="nav-item {{Request::is('user') || Request::is('payment/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('user.index') }}">
+                        <i class="fas fa-money-check-alt text-success"></i> {{ __('Pembayaran SPP') }}
+                    </a>
+                </li>
+                <li class="nav-item {{Request::is('user') || Request::is('fee/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('user.index') }}">
+                        <i class="fas fa-folder text-success"></i> {{ __('SPP') }}
+                    </a>
+                </li>
+                <li class="nav-item {{Request::is('user') || Request::is('student/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('user.index') }}">
+                        <i class="fas fa-user-graduate text-success"></i> {{ __('Siswa') }}
+                    </a>
+                </li>
+                <li class="nav-item {{Request::is('user') || Request::is('class/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('user.index') }}">
+                        <i class="fas fa-chalkboard text-success"></i> {{ __('Kelas') }}
                     </a>
                 </li>
                 <li class="nav-item {{Request::is('user') || Request::is('user/*') ? 'active' : ''}}">
                     <a class="nav-link" href="{{ route('user.index') }}">
-                        <i class="fas fa-users text-primary"></i> {{ __('Users') }}
+                        <i class="fas fa-users text-success"></i> {{ __('Petugas') }}
                     </a>
                 </li>
                 <li class="nav-item {{Request::is('role') || Request::is('role/*') ? 'active' : ''}}">
                     <a class="nav-link" href="{{ route('role.index') }}">
-                        <i class="fas fa-lock text-primary"></i> {{ __('Roles') }}
+                        <i class="fas fa-lock text-success"></i> {{ __('Hak Akses') }}
                     </a>
                 </li>
                 {{-- <li class="nav-item">

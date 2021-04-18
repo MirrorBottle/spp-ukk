@@ -36,10 +36,7 @@
                         <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                           <h2>Personal Information</h2>
                           <div class="row mt-4">
-                            <div class="col-md-3 col-sm-12 d-flex flex-column justify-content-center align-items-center">
-                              <img class="img-fluid img-thumbnail rounded img-custom" src="{{asset('storage/files/' . $user->avatar)}}" alt="User avatar" style="width:15rem;height:15rem">
-                            </div>
-                            <div class="col-md-9 col-sm-12">
+                            <div class="col-12">
                               <div class="row">
                                 <div class="col-md-6">
                                   <span class="font-weight-bold d-block text-small text-muted">Nama</span>
