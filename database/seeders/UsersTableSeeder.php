@@ -19,33 +19,29 @@ class UsersTableSeeder extends Seeder
         // admin
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@ukk.com',
+            'username' => 'admin',
             'password' => Hash::make('secret'),
-            'gender' => rand(0, 1),
-            'birthdate' => $faker->date,
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'role_id' => 1,
         ]);
         // staff
         DB::table('users')->insert([
             'name' => 'Staff',
-            'email' => 'staff@ukk.com',
+            'username' => 'staff',
             'password' => Hash::make('secret'),
-            'gender' => rand(0, 1),
-            'birthdate' => $faker->date,
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'role_id' => 2,
         ]);
         // admin
         DB::table('users')->insert([
             'name' => 'Alice',
-            'email' => 'alice@ukk.com',
+            'username' => 'alice',
             'password' => Hash::make('secret'),
-            'avatar' => 'Takigawa.Miu.600.2831124_1616943134.jpg',
-            'gender' => rand(0, 1),
-            'birthdate' => $faker->date,
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'role_id' => 2,
         ]);
     }
 }

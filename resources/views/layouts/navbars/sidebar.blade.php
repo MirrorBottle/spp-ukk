@@ -46,23 +46,27 @@
                         <i class="ni ni-tv-2 text-success"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
-                <li class="nav-item {{Request::is('user') || Request::is('payment/*') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{ route('user.index') }}">
+                @role('staff')
+                <li class="nav-item {{Request::is('payment') || Request::is('payment/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('payment.index') }}">
                         <i class="fas fa-money-check-alt text-success"></i> {{ __('Pembayaran SPP') }}
                     </a>
                 </li>
-                <li class="nav-item {{Request::is('user') || Request::is('fee/*') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{ route('user.index') }}">
+                @endrole
+                
+                @role('admin')
+                <li class="nav-item {{Request::is('fee') || Request::is('fee/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('fee.index') }}">
                         <i class="fas fa-folder text-success"></i> {{ __('SPP') }}
                     </a>
                 </li>
-                <li class="nav-item {{Request::is('user') || Request::is('student/*') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{ route('user.index') }}">
+                <li class="nav-item {{Request::is('student') || Request::is('student/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('student.index') }}">
                         <i class="fas fa-user-graduate text-success"></i> {{ __('Siswa') }}
                     </a>
                 </li>
-                <li class="nav-item {{Request::is('user') || Request::is('class/*') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{ route('user.index') }}">
+                <li class="nav-item {{Request::is('class') || Request::is('class/*') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{ route('class.index') }}">
                         <i class="fas fa-chalkboard text-success"></i> {{ __('Kelas') }}
                     </a>
                 </li>
@@ -71,32 +75,7 @@
                         <i class="fas fa-users text-success"></i> {{ __('Petugas') }}
                     </a>
                 </li>
-                <li class="nav-item {{Request::is('role') || Request::is('role/*') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{ route('role.index') }}">
-                        <i class="fas fa-lock text-success"></i> {{ __('Hak Akses') }}
-                    </a>
-                </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                        <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Laravel Examples') }}</span>
-                    </a>
-
-                    <div class="collapse show" id="navbar-examples">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    {{ __('User profile') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    {{ __('User Management') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> --}}
+                @endrole
             </ul>
         </div>
     </div>

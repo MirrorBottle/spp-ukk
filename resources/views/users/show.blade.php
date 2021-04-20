@@ -12,18 +12,8 @@
                     <div class="col-md-12 col-sm-12 d-flex flex-row justify-content-between">
                       <a href="{{route('user.index')}}" class="btn btn-primary btn-sm">
                         <i class="fas fa-arrow-left mr-2"></i>
-                        Back
+                        Kembali
                       </a>
-                      <div>
-                        <button class="btn btn-warning btn-sm ml-1">
-                          <i class="mr-2 fas fa-pen"></i>
-                          Edit User
-                        </button>
-                        <button class="btn btn-danger btn-sm ml-1">
-                          <i class="mr-2 fas fa-trash-alt"></i>
-                          Delete User
-                        </button>
-                      </div>
                     </div>
                     <div class="col-md-2 col-sm-12 mt-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">

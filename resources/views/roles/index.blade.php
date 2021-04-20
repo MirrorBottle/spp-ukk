@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
+                        <table class="table table-datatable align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Name</th>

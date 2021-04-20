@@ -9,6 +9,6 @@
     </a>
     <button data-url="{{route("$route.destroy", $data->id)}}" data-url-callback="{{route("$route.index")}}" class="btn btn-danger btn-sm mr-1 delete-button">
         <i class="fas fa-trash-alt mr-1"></i>
-        Delete
+        Hapus
     </button>
 </div>

@@ -22,21 +22,21 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
+                        <table class="table table-datatable align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
+                                    <th scope="col">Username</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Jenis Kelamin</th>
+                                    <th scope="col">Hak Akses</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
                                 <tr>
+                                    <td>{{$user->username}}</td>
                                     <td>{{$user->name}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->gender_label}}</td>
+                                    <td>{{$user->role->name}}</td>
                                     <td>
                                         <x-table-buttons :data="$user" :route="$route" />
                                     </td>

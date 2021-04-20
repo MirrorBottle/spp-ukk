@@ -2,7 +2,7 @@ $(function () {
     // Select2
     $('.select2').select2();
     // Datatable
-    $('.table').DataTable({
+    $('.table-datatable').DataTable({
         "language": {
             "emptyTable":     "Data kosong",
             "info":           "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
@@ -23,8 +23,39 @@ $(function () {
             }
         }
     });
-    // Datepicker
-    $('.datepicker').datepicker();
+    $('.table-minimal').DataTable({
+        "paging": false,
+        "bInfo": false,
+        "searching": false,
+        "sorting": false,
+        "language": {
+            "emptyTable":     "Data kosong",
+            "info":           "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+            "infoEmpty":      "Menampilkan 0 sampai 0 dari 0 data",
+            "infoFiltered":   "",
+            "infoPostFix":    "",
+            "thousands":      ",",
+            "lengthMenu":     "Tampilkan _MENU_ data",
+            "loadingRecords": "Loading...",
+            "processing":     "Memproses...",
+            "search":         "Cari:",
+            "zeroRecords":    "Tidak ada data yang ditemukan.",
+            "oPaginate": {
+                "sFirst": "<i class='fas fa-chevron-double-left'></i>",
+                "sPrevious": "<i class='fas fa-chevron-left'></i>",
+                "sNext": "<i class='fas fa-chevron-right'></i>",
+                "sLast": "<i class='fas fa-chevron-double-right'></i>"
+            }
+        }
+    });
+    $('.datepicker-second').datepicker({
+        format: 'dd-mm-yyyy',
+    });
+    $('.yearpicker').datepicker({
+        format: "yyyy",
+        viewMode: "years", 
+        minViewMode: "years"
+    });
     bsCustomFileInput.init();
 
     // Delete Button

@@ -52,10 +52,8 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $user = User::create($request->except(['password_confirm', 'avatar']));
-        $user->avatar = $this->storeFile($request, 'avatar', $this->directory);
-        $user->save();
-        return redirect('user')->with('success', 'Item created successfully!');
+        $user = User::create($request->except(['password_confirm']));
+        return redirect('user')->with('success', 'Data petugas berhasil dibuat!');
     }
 
     /**
@@ -79,7 +77,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('users.edit', compact('user'));
+        $roles = $this->roles;
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -91,7 +90,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user  = User::find($id);
+        $user->update($request->all());
+        return redirect('user')->with('success', 'Data petugas berhasil diubah!');
     }
 
     /**
@@ -103,7 +104,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        $this->deleteFile($user->avatar, $this->directory);
         $user->delete();
         return response()->json(['statusCode' => 200, 'message' => 'Data berhasil dihapus']);
     }

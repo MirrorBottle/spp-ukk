@@ -14,10 +14,12 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                    <a href="{{ route('profile.edit') }}" class="dropdown-item">
-                        <i class="ni ni-single-02"></i>
-                        <span>{{ __('Profile') }}</span>
+                    @student
+                    <a href="{{ route('student.show-password') }}" class="dropdown-item">
+                        <i class="fas fa-lock"></i>
+                        <span>{{ __('Ubah Password') }}</span>
                     </a>
+                    @endstudent
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="ni ni-user-run"></i>

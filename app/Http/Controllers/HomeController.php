@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
+use App\Models\Student;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -21,6 +16,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $payments = Auth::guard('students')->check() ? Payment::where('student_id', Auth::guard('students')->user()->id)->orderBy('id', 'desc')->get() : Payment::orderBy('id', 'desc')->limit(10)->get();
+        $paid = Payment::all()->map(function($payment) {
+            return $payment->paid;
+        })->sum();
+        $students = Student::all()->count();
+        $total_payments = Payment::all()->count();
+
+        return view('dashboard', compact('payments', 'paid', 'students', 'total_payments'));
     }
 }
